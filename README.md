@@ -11,12 +11,12 @@
 <h>**config.js**</h2>
 
 ```javascript
-global.owner = ['628873133561']; // Your number is here
-global.mods = ['628873133561']; // Your number is here
-global.prems = ['628873133561']; // Your number is here
+global.owner = ['6282177779477']; // Your number is here
+global.mods = ['6282177779477']; // Your number is here
+global.prems = ['6282177779477']; // Your number is here
 
 global.nameowner = 'Sazumi Viki'; // Owner name
-global.numberowner = '628873133561'; // Owner number
+global.numberowner = '6282177779477'; // Owner number
 global.mail = 'hi@sazumiviki.dev'; // Owner E-mail
 
 global.namebot = 'Sazumi - Bot Whatsapp'; // Your bot name
@@ -126,7 +126,7 @@ fs.watchFile(file, () => {
 
 <h4>Where can I buy sazumi-bot script officially?</h4>
 
-- [Whatsapp](https://wa.me/+628873133561)
+- [Whatsapp](https://wa.me/+6282177779477)
 - [Telegram](https://t.me/sazumiviki)
 
 ##
@@ -202,7 +202,7 @@ fs.watchFile(file, () => {
 
 Demo : [sazumi-bot v1.0.0](https://wa.me/62857961868359?text=.menu)
 <br>
-Creator : [Sazumi Viki](https://wa.me/628873133561)
+Creator : [Sazumi Viki](https://wa.me/6282177779477)
 <br>
 Official Group : [PEKO PEKO](https://chat.whatsapp.com/LqvyPGgU82ZHogxjpU60BE)
 

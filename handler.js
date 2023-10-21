@@ -616,7 +616,7 @@ module.exports = {
 					if (xp > 200) m.reply('Ngecit -_-') // Hehehe
 					else m.exp += xp
 					if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-						this.reply(m.chat, `Your limit runs out, please buy through ${usedPrefix}buylimit, or contact the owner sazumi-bot *+628873133561*`, m)
+						this.reply(m.chat, `Your limit runs out, please buy through ${usedPrefix}buylimit, or contact the owner sazumi-bot *+6282177779477*`, m)
 						continue
 					}
 					if (plugin.level > _user.level) {
@@ -813,7 +813,7 @@ global.dfail = async (type, m, conn) => {
     botAdmin: `ʜᴀɪ @${m.sender.split('@')[0]}, ᴍᴀᴋᴇ ᴛʜᴇ ʙᴏᴛ ᴀɴ ᴀᴅᴍɪɴ ᴛᴏ ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ.`,
     unreg: `ʜᴀɪ *@${m.sender.split('@')[0]}*⁩, ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ ᴜꜱɪɴɢ ᴛʜᴇ ʙᴏᴛ, ᴘʟᴇᴀꜱᴇ ʀᴇɢɪꜱᴛᴇʀ ꜰɪʀꜱᴛ, ᴇxᴀᴍᴘʟᴇ:
 
-•  *ᴍᴀɴᴜᴀʟ* : .ʀᴇɢɪꜱᴛᴇʀ ᴠɪᴋɪ.18
+•  *ᴍᴀɴᴜᴀʟ* : .ʀᴇɢɪꜱᴛᴇʀ ᴀᴅᴅʏ.27
 •  *ᴡɪᴛʜ ᴇᴍᴀɪʟ* : .ʀᴇɢᴍᴀɪʟ ʜɪ@ᴇᴍᴀɪʟ.ᴄᴏᴍ
 `,
     restrict: 'ᴛʜɪꜱ ꜰᴇᴀᴛᴜʀᴇ ɪꜱ ᴅɪꜱᴀʙʟᴇᴅ.'
