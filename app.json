@@ -1,0 +1,13 @@
+{
+  "name": "sazumi-bot",
+  "description": "Whatsapp Bot Multidevice",
+  "repository": "https://github.com/SazumiVicky/sazumi-bot",
+  "logo": "https://cdn.jsdelivr.net/gh/SazumiVicky/Storage@main/sazumiviki_ireena.webp",
+  "keywords": [
+    "bot",
+    "sazumi-bot",
+    "whatsapp",
+    "multi-device",
+    "whatsapp-bot"
+  ]
+}

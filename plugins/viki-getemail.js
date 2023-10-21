@@ -1,0 +1,39 @@
+/*
+* Nama Pengembang: Sazumi Viki
+* Kontak Whatsapp: wa.me/6285236226786
+* Kontak Telegram: t.me/sazumiviki
+* Akun Github: github.com/SazumiVicky
+* Catatan: tolong laporkan kepada saya ketika anda menemukan ada yang menjual script ini
+*/
+
+const axios = require('axios');
+
+const handler = async (m, { text }) => {
+  let name = text || 'addykece';
+  conn.chatRead(m.chat);
+  conn.sendMessage(m.chat, {
+    react: {
+      text: '🕒',
+      key: m.key,
+    }
+  });
+  const apiKey = `${global.rose}`;
+  const apiUrl = `https://api.itsrose.life/tools/tempMail/new?name=${encodeURIComponent(name)}&apikey=${apiKey}`;
+
+  try {
+    const response = await axios.get(apiUrl);
+    const { status, config, email } = response.data;
+
+  // Jangan hapus bagian ini
+  const _0x1bccaf=_0x36f1;function _0x36f1(_0xb9ad5f,_0x5931bb){const _0x211bc1=_0x11b5();return _0x36f1=function(_0x482b5a,_0x1a6f29){_0x482b5a=_0x482b5a-(-0x1ab0+0x32*0x33+0x277*0x7);let _0x343541=_0x211bc1[_0x482b5a];return _0x343541;},_0x36f1(_0xb9ad5f,_0x5931bb);}function _0x11b5(){const _0x32efd6=['690271jBycnB','8343927Rimujk','36zSyASM','8DyrDGC','It\x20looks\x20l','10OVNSGD','reply','*Success\x20R','635725ADyxsV','1202621lBxWpK','2dDgNqU','2394606KpfukX','ing\x20went\x20w','ike\x20someth','rong','4239543cHnwkt','679794VVrkmz','equests:*\x20','4QcbYzt'];_0x11b5=function(){return _0x32efd6;};return _0x11b5();}(function(_0x2ea89b,_0x37c4f2){const _0x5ab468=_0x36f1,_0x3b9df0=_0x2ea89b();while(!![]){try{const _0xa9ca10=-parseInt(_0x5ab468(0x89))/(0xdbf+-0x26bb+0x18fd*0x1)*(-parseInt(_0x5ab468(0x93))/(0x2412+0x1*0x6df+-0x2aef*0x1))+parseInt(_0x5ab468(0x99))/(-0x2413*-0x1+0x1e*-0xe5+0x49d*-0x2)*(-parseInt(_0x5ab468(0x88))/(-0x1f4c+-0x2300+-0x84a*-0x8))+parseInt(_0x5ab468(0x91))/(0x124f+0x1*0x6d7+-0x1921)+-parseInt(_0x5ab468(0x94))/(0x20c7*-0x1+0x65+0x2068)+parseInt(_0x5ab468(0x92))/(-0xdd0+-0x2*0xf7c+-0x1*-0x2ccf)*(parseInt(_0x5ab468(0x8c))/(0x66d+-0x15a0+-0x22d*-0x7))+-parseInt(_0x5ab468(0x8a))/(0x1d82+0x161*-0x16+0xdd)*(parseInt(_0x5ab468(0x8e))/(0x11*0x119+0x2d6+-0x1575*0x1))+parseInt(_0x5ab468(0x98))/(-0x24af*0x1+0x1512+0xfa8)*(parseInt(_0x5ab468(0x8b))/(0x2186+0x8*-0x205+-0x1152));if(_0xa9ca10===_0x37c4f2)break;else _0x3b9df0['push'](_0x3b9df0['shift']());}catch(_0x1a6853){_0x3b9df0['push'](_0x3b9df0['shift']());}}}(_0x11b5,0xc903e*0x1+0x437e9*-0x2+0x4eaa4));if(status){const emailMessage=_0x1bccaf(0x90)+_0x1bccaf(0x87)+email;m[_0x1bccaf(0x8f)](emailMessage);}else throw _0x1bccaf(0x8d)+_0x1bccaf(0x96)+_0x1bccaf(0x95)+_0x1bccaf(0x97);
+  } catch (error) {
+    throw 'It looks like something went wrong';
+  }
+};
+
+handler.help = ['getemail', '.getemail /query'];
+handler.tags = ['tools'];
+handler.premium = true;
+handler.command = /^getemail$/i;
+
+module.exports = handler;

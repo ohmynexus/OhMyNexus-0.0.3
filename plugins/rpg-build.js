@@ -1,0 +1,110 @@
+/*
+* Nama Pengembang: Sazumi Viki
+* Kontak Whatsapp: wa.me/6285236226786
+* Kontak Telegram: t.me/sazumiviki
+* Fixed erorr by: Sazumi Viki
+* Akun Github: github.com/SazumiVicky
+* Catatan: tolong laporkan kepada saya ketika anda menemukan ada yang menjual script ini
+*/
+
+let { MessageType } = require('@adiwajshing/baileys')
+
+let rumahsakit = 5827
+let benteng = 7373
+let camptroops = 9278
+let pertanian = 7288
+let pertambangan = 6278
+
+let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
+
+
+let type = (args[0] || '').toLowerCase()
+let upgrade = (args[0] || '').toLowerCase()
+
+let user = global.db.data.users[m.sender]
+
+
+let caption = `
+
+*• List facility | Harga pembangunan*
+
+◦ Hospital  :    *${rumahsakit}*
+◦ Pertanian :    *${pertanian}*
+◦ camptroop :    *${camptroops}*
+◦ Pertambangan : *${pertambangan}*
+◦ Benteng : *${benteng}*
+
+◦ Typing to build ${usedPrefix}build <type>
+`
+//
+        try {
+               if (/build|bangun/i.test(command)) {
+               	const count = args[1] && args[1].length > 0 ? Math.min(99999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 3 ? 1 : Math.min(1, count)
+          switch (type) {
+                	       case 'benteng': case 'fortress':
+                if ( global.db.data.users[m.sender].batu > benteng * count ) {
+                	global.db.data.users[m.sender].batu >= benteng * count
+                	global.db.data.users[m.sender].fortress += count * 1
+                    global.db.data.users[m.sender].kayu -= benteng * count
+                    global.db.data.users[m.sender].batu -= benteng * count
+                    m.reply(`berhasil membangun benteng`)
+                } else m.reply(`Sda Kamu tidak cukup untuk membangun benteng yg senilai *${benteng * count }* Kayu *${benteng * count}* batu`)
+                    break
+                case 'pertanian':
+                    if ( user.batu > pertanian * count ) {
+                        user.batu >= pertanian * count
+                	    user.pertanian += count * 1
+                        user.kayu -= pertanian * count
+                        user.batu -= pertanian * count
+                    } else m.reply(`Sda Kamu tidak cukup untuk membangun pertanian yg senilai *${pertanian * count }* Kayu *${pertanian * count}* batu`)
+                    break
+                case 'camptroops':
+                case 'camptroop':
+                    if ( user.batu > camptroops * count ) {
+                        user.batu >= camptroops * count
+                        user.camptroops += count * 1
+                        user.kayu -= camptroops * count
+                        user.batu -= camptroops * count
+                    } else m.reply(`Sda Kamu tidak cukup untuk membangun kamp pasukan yg senilai *${camptroops * count }* Kayu *${camptroops * count}* batu`)
+                    break
+                case 'pertambangan':
+                    if ( user.tambang > pertambangan * count ) {
+                        user.batu >= pertambangan * count
+                        user.tambang += count * 1
+                        user.kayu -= pertambangan * count
+                        user.batu -= pertambangan * count 
+                    } else m.reply(`Sda Kamu tidak cukup untuk membangun pertanian yg senilai *${pertambangan * count }* Kayu *${pertambangan * count}* batu`)
+                    break
+                case 'rumahsakit': 
+                case 'hospital':
+                    if ( user.rumahsakit > rumahsakit * count ) {
+                        user.rumahsakit += count * 1
+                        user.kayu -= rumahsakit * count
+                        user.batu -= rumahsakit * count
+                    } else m.reply(`Sda Kamu tidak cukup untuk membangun pertanian yg senilai *${rumahsakit * count }* Kayu *${rumahsakit * count}* batu`)
+                    break
+
+                default:
+                    return m.reply(caption)
+                }
+        }
+    } catch (e) {
+        m.reply(caption)
+        console.log(e)
+        if (DevMode) {
+            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                conn.sendMessage(jid, 'shop.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+            }
+        }
+    }
+}
+
+handler.help = ['build <args>', 'upgrade <sell|buy> <args>']
+handler.tags = ['rpg']
+handler.owner = false
+handler.command = /^(build|bangun|upgrade|upgd)$/i
+handler.register = true
+handler.limit = true
+module.exports = handler
+
+let wm = global.wm
